@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VisualDB"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        MinHeight="450"
+        MinWidth="800"
+        WindowState="Maximized"
+        Title="VisualDB">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New Project" />
+                <MenuItem Header="_Open Project" />
+                <MenuItem Header="New _table" />
+                <MenuItem Header="_Save" />
+                <MenuItem Header="Save _as" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="Help" />
+                <MenuItem Header="_About" />
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
 
-    </Grid>
+            <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+                <WrapPanel Grid.Column="0">
+
+                </WrapPanel>
+            </Border>
+
+            <WrapPanel Grid.Column="5">
+                <DockPanel>
+                    
+                </DockPanel>
+            </WrapPanel>
+        </Grid>
+    </DockPanel>
 </Window>
