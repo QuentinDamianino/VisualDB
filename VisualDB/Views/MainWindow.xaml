@@ -3,12 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:self="clr-namespace:VisualDB"
         xmlns:local="clr-namespace:VisualDB"
         mc:Ignorable="d"
         MinHeight="450"
         MinWidth="800"
         WindowState="Maximized"
         Title="VisualDB">
+    <Window.CommandBindings>
+        <CommandBinding Command="self:CustomCommands.Exit" Executed="ExitCommand_Executed" CanExecute="ExitCommand_CanExecute" />
+    </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -18,7 +22,7 @@
                 <MenuItem Header="_Save" />
                 <MenuItem Header="Save _as" />
                 <Separator />
-                <MenuItem Header="_Exit" />
+                <MenuItem Command="self:CustomCommands.Exit" Header="_Exit" />
             </MenuItem>
             <MenuItem Header="_Help">
                 <MenuItem Header="Help" />
