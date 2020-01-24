@@ -38,17 +38,17 @@
 
             <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
                 <WrapPanel Grid.Row="0">
+                    <DockPanel>
+                        <ToolBarTray Orientation="Vertical">
+                            <ToolBar DockPanel.Dock="Top">
+                                <Button Command="self:CustomCommands.NewTable" ToolTip="New Table" Content="New Table" />
+                            </ToolBar>
+                        </ToolBarTray>
+                    </DockPanel>
                 </WrapPanel>
             </Border>
 
             <WrapPanel Grid.Row="5">
-                <DockPanel>
-                    <ToolBarTray Orientation="Vertical">
-                        <ToolBar DockPanel.Dock="Top">
-                            <Button Command="self:CustomCommands.NewTable" ToolTip="New Table" Content="New Table" />
-                        </ToolBar>
-                    </ToolBarTray>
-                </DockPanel>
             </WrapPanel>
         </Grid>
     </DockPanel>
