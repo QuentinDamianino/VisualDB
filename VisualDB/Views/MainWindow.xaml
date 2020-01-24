@@ -12,6 +12,7 @@
         Title="VisualDB">
     <Window.CommandBindings>
         <CommandBinding Command="self:CustomCommands.Exit" Executed="ExitCommand_Executed" CanExecute="ExitCommand_CanExecute" />
+        <CommandBinding Command="self:CustomCommands.NewTable" Executed="NewTableCommand_Executed" CanExecute="NewTableCommand_CanExecute" />
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -30,20 +31,23 @@
             </MenuItem>
         </Menu>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="5*" />
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
             <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
-                <WrapPanel Grid.Column="0">
-
+                <WrapPanel Grid.Row="0">
                 </WrapPanel>
             </Border>
 
-            <WrapPanel Grid.Column="5">
+            <WrapPanel Grid.Row="5">
                 <DockPanel>
-                    
+                    <ToolBarTray Orientation="Vertical">
+                        <ToolBar DockPanel.Dock="Top">
+                            <Button Command="self:CustomCommands.NewTable" ToolTip="New Table" Content="New Table" />
+                        </ToolBar>
+                    </ToolBarTray>
                 </DockPanel>
             </WrapPanel>
         </Grid>

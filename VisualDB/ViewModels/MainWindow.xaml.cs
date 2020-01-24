@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VisualDB.Models;
 
 namespace VisualDB
 {
@@ -20,6 +21,8 @@ namespace VisualDB
     /// </summary>
     public partial class MainWindow : Window
     {
+        // private Table m_oTable = null;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +37,16 @@ namespace VisualDB
         {
             Application.Current.Shutdown();
         }
+
+        private void NewTableCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void NewTableCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            
+        }
     }
 
     public static class CustomCommands
@@ -46,6 +59,17 @@ namespace VisualDB
             new InputGestureCollection()
             {
                 new KeyGesture(Key.F4, ModifierKeys.Alt)
+            }
+        );
+
+        public static readonly RoutedUICommand NewTable = new RoutedUICommand
+        (
+            "Exit",
+            "Exit",
+            typeof(CustomCommands),
+            new InputGestureCollection()
+            {
+                new KeyGesture(Key.N, ModifierKeys.Alt)
             }
         );
     }
